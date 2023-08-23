@@ -75,7 +75,7 @@ void spliter(data *d, const char *delim)
 free:
 	free_array(d->av);
 	free(d->cmd);
-	perror(d->shell_name);
+	perror(d->shell_nm);
 	exit(EXIT_FAILURE);
 }
 

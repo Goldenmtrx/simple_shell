@@ -110,7 +110,7 @@ char **_new_environ(char *nm, char *value)
 	new_entry = create_new_entry(nm, value);
 	if (new_entry == NULL)
 		return (NULL);
-	new_environ = _getenv(nm) ? malloc((env_len + 1) * sizeof(char *))
+	new_environ = _getv(nm) ? malloc((env_len + 1) * sizeof(char *))
 								: malloc((env_len + 2) * sizeof(char *));
 
 	if (!new_environ)
@@ -133,7 +133,7 @@ char **_new_environ(char *nm, char *value)
 		else
 			strcpy(new_environ[i], environ[i]);
 	}
-	if (!_getenv(nm))
+	if (!_getv(nm))
 	{
 		new_environ[env_len] = new_entry;
 		new_environ[env_len + 1] = NULL;
