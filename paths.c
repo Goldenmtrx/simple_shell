@@ -146,7 +146,7 @@ char **_new_environ(char *nm, char *value)
 /**
  * _setenv - Initialize a new environment variable, or modify an existing one
  * @data: to use the flag
- * @name: variable name
+ * @nm: variable name
  * @value: variable value
  * Return: void
  */
@@ -154,7 +154,7 @@ int _setenv(data *data, char *nm, char *value)
 {
 	char **new_environ;
 
-	if (!name || !value)
+	if (!nm || !value)
 		return (-1);
 
 	new_environ = _new_environ(nm, value);

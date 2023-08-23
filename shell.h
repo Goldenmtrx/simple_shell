@@ -19,7 +19,7 @@ extern char **environ;
  * struct data - holds the main data.
  * @av: Array of tokens to pass
  * @cmd: The user input
- * @shell_name: name of the shell program
+ * @shell_nm: name of the shell program
  * @last_exit_status: last command executed
  * @flag_setenv: 1 if user did exec setences
  */
@@ -27,7 +27,7 @@ typedef struct data
 {
 	char **av;
 	char *cmd;
-	const char *shell_name;
+	const char *shell_nm;
 	int last_exit_status;
 	int flag_setenv;
 } data;
