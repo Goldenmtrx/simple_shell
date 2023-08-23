@@ -21,7 +21,7 @@ void new_process(data *data)
 		data->last_exit_status = WEXITSTATUS(status);
 	return;
 free:
-	perror(data->shell_name);
+	perror(data->shell_nm);
 	free_array(data->av);
 	free(data->cmd);
 	exit(EXIT_FAILURE);
@@ -58,20 +58,20 @@ void _exec(data *data)
 		if (isatty(STDIN_FILENO))
 			_printf(prompt);
 
-		read_cmd(data);
+		put_cmd(data);
 		if (_strlen(data->cmd) != 0)
 		{
-			split(data, " ");
-			if (!exec_builtin(data))
+			spliter(data, " ");
+			if (!exec_cons(data))
 			{
 				_which(data);
 				if (access(data->av[0], F_OK) == -1)
 				{
-					perror(data->shell_name);
+					perror(data->shell_nm);
 				}
 				else
 				{
-					start_process(data);
+					new_process(data);
 				}
 			}
 			free_array(data->av);

@@ -52,7 +52,7 @@ void spliter(data *d, const char *delim)
 	if (d->av == NULL)
 	{
 		free(d->cmd);
-		perror(d->shell_name);
+		perror(d->shell_nm);
 		exit(EXIT_FAILURE);
 	}
 	d->av[0] = NULL;

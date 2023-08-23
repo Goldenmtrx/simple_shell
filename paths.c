@@ -36,13 +36,13 @@ char *_getv(char *nm)
 int _which(data *data)
 {
 	char *token, *path,
-		*paths = malloc(_strlen(_getenv("PATH") ? _getenv("PATH") : "") + 1);
+		*paths = malloc(_strlen(_getv("PATH") ? _getv("PATH") : "") + 1);
 	size_t token_len;
 	int find = -1;
 
-	if (!_getenv("PATH"))
+	if (!_getv("PATH"))
 		goto step_out;
-	_strcpy(paths, _getenv("PATH"));
+	_strcpy(paths, _getv("PATH"));
 	if (paths == NULL)
 		goto step_out;
 	token = strtok(paths, ":");

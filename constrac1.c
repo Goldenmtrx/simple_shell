@@ -14,12 +14,12 @@ void constrac_cd(data *data)
 		perror("getcwd() error");
 	_setenv(data, "PWD", cwd);
 	if (!dir)
-		dir = _getenv("HOME");
+		dir = _getv("HOME");
 	if (chdir(dir) == -1)
 		perror("cd");
 	else
 	{
-		_setenv(data, "OLDPWD", _getenv("PWD"));
+		_setenv(data, "OLDPWD", _getv("PWD"));
 		if (getcwd(cwd, sizeof(cwd)) == NULL)
 			perror("getcwd() error");
 		_setenv(data, "PWD", cwd);
