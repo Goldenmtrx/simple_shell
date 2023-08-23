@@ -105,7 +105,7 @@ void constrac_unsetenv(data *data)
 	(void)data;
 	if (!data->av[1] || !_getv(data->av[1]))
 	{
-		perror(data->shell_nm, "variable not found.");
+		perror("variable not found.");
 		return;
 	}
 	len = strlen(data->av[1]);
