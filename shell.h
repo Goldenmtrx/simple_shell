@@ -44,53 +44,53 @@ typedef struct constrac
 } constrac;
 
 /** constrac.c **/
-int exec_constrac(data *d);
+int exec_cons(data *d);
 void constrac_exit(data *d);
 void constrac_env(data *d);
-void constrac_setenv(data *d);
-void constrac_unsetenv(data *d);
-void constrac_cd(data *d);
+void constrac_setenv(data *data);
+void constrac_unsetenv(data *data);
+void constrac_cd(data *data);
 
 
 /** help0.c **/
 void _printf(const char *str);
 void free_array(char **array);
-void split(data *d, const char *delim);
-void init_data(data *d, const char *shell_name);
-void read_cmd(data *d);
+void spliter(data *d, const char *delim);
+void init_data(data *d, const char *shell_nm);
+void put_cmd(data *d);
 
-/** helpe1.c **/
-void _perror(const char *str1, const char *str2);
+/** help1.c **/
+void _printstr(const char *str1, const char *str2);
 void _trim(char *str);
 void *_realloc(void *ptr, unsigned int new_size);
 
 /** app.c **/
-void new_process(data *d);
-void handler_sigint(int sig);
-void _exec(data *d);
+void new_process(data *data);
+void handler_sigint(int signal);
+void _exec(data *data);
 
 /** paths.c **/
-char *_getenv(char *name);
-int _which(data *d);
-int _setenv(data *d, char *name, char *value);
+char *_getv(char *nm);
+int _which(data *data);
+int _setenv(data *data, char *nm, char *value);
 
 /** string0.c **/
 unsigned int _strlen(char *str);
-int _strcmp(const char *s1, const char *s2);
-int _strncmp(const char *s1, const char *s2, int n);
+int _strcmp(const char *sa, const char *sb);
+int _strncmp(const char *sa, const char *sb, int n);
 char *_strcpy(char *dest, const char *src);
 char *_strcat(char *dest, const char *src);
 
 
 /** string1.c **/
-char *_strdup(const char *str);
-int _isnumber(const char *status);
+char *_strdup(const char *st);
+int _isnumber(const char *stat);
 int _isdigit(int c);
 
 /** endline.c **/
 #define READ_BUF_SIZE 1024
 
-ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
+ssize_t endline(char **linep, size_t *n, FILE *stream);
 
 
 #endif
