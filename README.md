@@ -1,1 +1,1 @@
-this repostryru is for simple shell
+This Repository is for my  simple shell project
